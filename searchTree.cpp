@@ -8,6 +8,7 @@ public:
   //virtual ~BST();
   ~BST();
 
+
   void insert(E value);
   bool searchNode(int value);
   bool deleteNode(int k);
@@ -18,6 +19,7 @@ public:
 
   TreeNode<E>* getSuccessor(TreeNode<E> *d);
   void printTree(TreeNode<E> *node);
+  void printAscendingTree(TreeNode<E> *node);
 
 private:
   TreeNode<E> *root;
@@ -48,6 +50,17 @@ void BST<E>::printTree(TreeNode<E> *node){
   printTree(node -> left);
   cout << node -> key << endl;
   printTree(node -> right);
+}
+
+template <class E>
+void BST<E>::printAscendingTree(TreeNode<E> *node){
+  if(node == NULL){
+    return;
+  }
+  printTree(node -> right);
+  cout << node -> key << endl;
+  //need to print values as well
+  printTree(node -> left);
 }
 
 template <class E>

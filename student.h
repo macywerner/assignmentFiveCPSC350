@@ -20,6 +20,6 @@ public:
   string getMajor();
   double getGPA();
   int getAdvisorID();
-  
+
 
 };

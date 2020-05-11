@@ -39,5 +39,6 @@ TreeNode<E>::TreeNode(E key){
 //template <int K, class V>
 template <class E>
 TreeNode<E>::~TreeNode(){
-  
+  delete left;
+  delete right;
 }

@@ -2,7 +2,10 @@
 using namespace std;
 
 Faculty::Faculty(){
-
+  id = 0;
+  name = "";
+  level = "";
+  department = "";
 }
 
 Faculty::Faculty(int i_id, string i_name, string i_level, string  i_department){

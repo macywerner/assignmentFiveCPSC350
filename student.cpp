@@ -2,7 +2,12 @@
 using namespace std;
 
 Student::Student(){
-
+  id = 0;
+  name = "";
+  year = "";
+  major = "";
+  gpa = 0.0;
+  advisorID = 0;
 }
 
 Student::Student(int i_id, string i_name, string i_year, string  i_major, double i_gpa, int i_advisorID){

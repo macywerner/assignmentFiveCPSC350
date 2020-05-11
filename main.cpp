@@ -4,19 +4,19 @@
 #include "faculty.h"
 #include <fstream>
 
+using namespace std;
 
-
-void One(){
+void One(){	// Print all students and their information
   //masterStudent->printAscendingTree();
   //print information
 }
 
-void Two(){
+void Two(){	// Print all faculty and their information
   //masterFaculty->printAscendingTree();
   //print information
 }
 
-void Three(){
+void Three(){	// Find and display student information given the students id
   int id = 0;
   cout << "Enter student ID: ";
   cin >> id;
@@ -30,7 +30,7 @@ void Three(){
   }*/
 }
 
-void Four(){
+void Four(){	// Find and display faculty information given the faculty id
   int id = 0;
   cout << "Enter Faculty ID: ";
   cin >> id;
@@ -43,7 +43,7 @@ void Four(){
   }*/
 }
 
-void Five(){
+void Five(){	// Given a student’s id, print the name and info of their faculty advisor
   int id = 0;
   cout << "Enter student ID: ";
   cin >> id;
@@ -56,7 +56,7 @@ void Five(){
   //add advisees*/
 }
 
-void Six(){
+void Six(){	// Given a faculty id, print ALL the names and info of his/her advisees.
   int id = 0;
   cout << "Enter faculty ID: ";
   cin >> id;
@@ -69,20 +69,20 @@ void Six(){
   cout << "GPA: " << student.getGPA() << endl;*/
 }
 
-void Seven(){
+void Seven(){	// Add a new student
 }
 
-void Eight(){
+void Eight(){	// Delete a student given the id
   int answerID;
   cout << "Enter the ID of the student you would like to delete: " ;
   cin >> answerID;
   //masterStudent->deleteNode(answerID);
 }
 
-void Nine(){
+void Nine(){	// Add a new faculty member
 }
 
-void Ten(){
+void Ten(){	// Delete a faculty member given the id.
   int answerID;
   cout << "Enter the ID of the faculty you would like to delete: " ;
   cin >> answerID;
@@ -90,18 +90,20 @@ void Ten(){
   //figure out how to make sure students are switched
 }
 
-void Eleven(){
+void Eleven(){	// Change a student’s advisor given the student id and the new faculty id.
 
 }
-void Twelve(){
+void Twelve(){	// Remove an advisee from a faculty member given the ids
 
 }
-void Thirteen(){
+void Thirteen(){	// Rollback
 
 }
-void Fourteen(){
+void Fourteen(){	// Exit
 
 }
+
+
 void printMenu(){
   cout << "1. Print all students and their information" << endl;
   cout << "2. Print all faculty and their information" << endl;
@@ -119,57 +121,60 @@ void printMenu(){
   cout << "14. Exit" << endl;
 }
 
+
 int input(){
-  int answer;
+  string answer;
   cout << "Enter the number of the action you wish: ";
   cin >> answer;
+  int ansInt = stoi(answer);
 
-  switch(answer){
-    case '1':
+  switch(ansInt){
+    case 1:
       One();
       break;
-    case '2':
+    case 2:
       Two();
       break;
-    case '3':
+    case 3:
       Three();
       break;
-    case '4':
+    case 4:
       Four();
       break;
-    case '5':
+    case 5:
       Five();
       break;
-    case '6':
+    case 6:
       Six();
       break;
-    case '7':
+    case 7:
       Seven();
       break;
-    case '8':
+    case 8:
       Eight();
       break;
-    case '9':
+    case 9:
       Nine();
       break;
-    case '10':
+    case 10:
       Ten();
       break;
-    case '11':
+    case 11:
       Eleven();
       break;
-    case '12':
+    case 12:
       Twelve();
       break;
-    case '13':
+    case 13:
       Thirteen();
       break;
-    case '14':
+    case 14:
       Fourteen();
       break;
   }
 
 }
+
 
 int main(int argc, char** argv){
 

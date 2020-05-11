@@ -11,7 +11,7 @@ public:
 
   void insert(E value);
   bool searchNode(int value);
-  bool deleteNode(E k);
+  bool deleteNode(int k);
   bool isEmpty();
 
   TreeNode<E> *getMin();
@@ -19,17 +19,10 @@ public:
 
   TreeNode<E> *getSuccessor(TreeNode<E> *d);
   void printTree(TreeNode<E> *node);
+  void printTree();
   void printAscendingTree(TreeNode<E> *node);
 
-private:
   TreeNode<E> *root;
-  /*
-  TreeNode<E> *curr;
-  TreeNode<E> *current;
-  TreeNode<E> *parent;
-  TreeNode<E> *successor;
-  TreeNode<E> *sp;
-  */
 };
 
 //.cpp implementation
@@ -52,6 +45,11 @@ void BST<E>::printTree(TreeNode<E> *node){
   printTree(node -> left);
   cout << node -> key << endl;
   printTree(node -> right);
+}
+
+template <class E>
+void BST<E>::printTree(){
+	printTree(root);
 }
 
 template <class E>
@@ -124,7 +122,7 @@ void BST<E>::insert(E value){
       else{
         //go right
         curr = curr -> right;
-        if(curr = NULL){
+        if(curr == NULL){
           parent -> right = node;
           break;
         }
@@ -157,7 +155,7 @@ bool BST<E>::searchNode(int value){
 }
 
 template <class E>
-bool BST<E>::deleteNode(E k){
+bool BST<E>::deleteNode(int k){
   if(isEmpty()){
     return false;
   }
@@ -169,7 +167,7 @@ bool BST<E>::deleteNode(E k){
 
   while(curr -> key != k){
     parent = curr;
-    if(k < curr -> key){
+    if(curr -> key > k){
       isLeft = true;
       curr = curr -> left;
     }

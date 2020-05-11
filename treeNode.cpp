@@ -30,7 +30,7 @@ TreeNode<E>::TreeNode(){
 //template <int K, class V>
 template <class E>
 TreeNode<E>::TreeNode(E key){
-  key = key;
+  this->key = key;
   //value = v;
   left = NULL;
   right = NULL;

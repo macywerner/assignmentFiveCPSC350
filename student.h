@@ -5,14 +5,33 @@ class Student{
 public:
   Student();
   Student(int id, string name, string year, string major, double gpa, int advisorID);
+  Student(const Student& other);
   ~Student();
 
-  int id;
-  string name;
-  string year;
-  string major;
-  double gpa;
-  int advisorID;
+  void operator=(const Student& s);
+  
+  bool operator==(const Student& s);
+  bool operator!=(const Student& s);
+  bool operator>(const Student& s);
+  bool operator>=(const Student& s);
+  bool operator<(const Student& s);
+  bool operator<=(const Student& id);
+  
+  bool operator==(const int& id);
+  bool operator!=(const int& id);
+  bool operator>(const int& id);
+  bool operator>=(const int& id);
+  bool operator<(const int& id);
+  bool operator<=(const int& id);
+  
+  friend ostream& operator<<(ostream& os, const Student& stud);
+
+  int setID();
+  string setName();
+  string setYear();
+  string setMajor();
+  double setGPA();
+  int setAdvisorID();
 
   int getID();
   string getName();
@@ -21,5 +40,12 @@ public:
   double getGPA();
   int getAdvisorID();
 
+private:
+  int id;
+  string name;
+  string year;
+  string major;
+  double gpa;
+  int advisorID;
 
 };

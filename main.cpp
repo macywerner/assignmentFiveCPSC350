@@ -178,7 +178,7 @@ int input(){
 
 int main(int argc, char** argv){
 
-
+  /*
   ifstream inFSOne;
   //outstream outFSOne;
   //BST masterFaculty = new BST();
@@ -219,6 +219,27 @@ int main(int argc, char** argv){
 
   printMenu();
   input();
+  */
+  
+  
+  BST<Student> *stud = new BST<Student>();
+  
+  //Student foo = Student(1, "Foo Bar", "2020", "Computer Science", 3.4, 666);
+  
 
+  stud->insert(Student(10, "Foo Bar", "2020", "Computer Science", 3.4, 666));
+  stud->insert(Student(5, "Bart Simpson", "2020", "Computer Science", 3.4, 666));
+  stud->insert(Student(15, "Leeroy Jenkins", "2020", "Computer Science", 3.4, 666));
+ 
+  stud->printTree();
+  
+  stud->deleteNode(15);
+  
+  cout << endl;
+  stud->printTree();
+
+  delete stud;
+  
+  
   return 0;
 }

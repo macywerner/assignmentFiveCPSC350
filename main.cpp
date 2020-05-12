@@ -178,7 +178,6 @@ int input(){
 
 int main(int argc, char** argv){
 
-
   ifstream inFSOne;
   //outstream outFSOne;
   //BST masterFaculty = new BST();
@@ -219,6 +218,7 @@ int main(int argc, char** argv){
 
   printMenu();
   input();
-
+  
+  
   return 0;
 }

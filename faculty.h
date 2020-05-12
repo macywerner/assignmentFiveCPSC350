@@ -1,23 +1,53 @@
 #include <iostream>
+#include <string>
+#include "DLL.cpp"
 using namespace std;
 
 class Faculty{
 public:
   Faculty();
-  Faculty(int id, string name, string level, string department);
+  Faculty(int facID, string name, string level, string dept, DLL<int> *advIDs);
+  Faculty(const Faculty& other);
   ~Faculty();
 
-  int id;
-  string name;
-  string level;
-  string department;
-  //list ids;
+  void operator=(const Faculty& f);
+  
+  bool operator==(const Faculty& f) const;
+  bool operator!=(const Faculty& f) const;
+  bool operator>(const Faculty& f) const;
+  bool operator>=(const Faculty& f) const;
+  bool operator<(const Faculty& f) const;
+  bool operator<=(const Faculty& f) const;
+  
+  bool operator==(const int& id) const;
+  bool operator!=(const int& id) const;
+  bool operator>(const int& id) const;
+  bool operator>=(const int& id) const;
+  bool operator<(const int& id) const;
+  bool operator<=(const int& id) const;
+  
+  friend ostream& operator<<(ostream& os, const Faculty& stud);
 
-  int getID();
+  void setFacID(int newFacID);
+  void setName(string newName);
+  void setLevel(string newLevel);
+  void setDept(string newDept);
+  void setAdvIDs(DLL<int>* newAdvIDs);
+  
+  int getFacID();
   string getName();
   string getLevel();
-  string getDepartment();
-  //list getIDs();
+  string getDept();
+  DLL<int>* getAdvIDs();
 
+  string toString() const;
 
+private:
+  int facID;
+  string name;
+  string level;
+  string dept;
+  DLL<int> *advIDs;
+
+  
 };

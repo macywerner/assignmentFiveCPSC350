@@ -6,6 +6,7 @@
 
 #include "ListNode.cpp"
 #include <iostream>
+#include <string>
 
 template <class T>
 class DLL {
@@ -31,7 +32,7 @@ class DLL {
 		int search(int val);	// Return value or position of node (depending on implementation; typically returns position)
 		int removeAtPos(int pos);
 		int insertAtPos(int pos);	// Optional; very similar to removeAtPos
-		T peek(int pos);	// Get value at index in list
+		T peek(int pos) const;	// Get value at index in list
 
 		int getSize();
 		bool isEmpty();
@@ -49,14 +50,17 @@ DLL<T>::DLL() {
 
 template <class T>
 DLL<T>::DLL(const DLL& dll) {
-	size = dll.size;
-	front = dll.front;
-	back = dll.back;
+	for(int i = 0; i < dll.size; ++i) {
+		insertBack(dll.peek(i));
+	}
 }
 
 template <class T>
 DLL<T>::~DLL() {	// Calls ListNode's recursive delete, deletes all nodes.
 	delete front;
+	if(back != NULL) {
+		delete back;
+	}
 }
 
 template <class T>
@@ -200,7 +204,7 @@ int DLL<T>::removeAtPos(int pos) {
 }
 
 template <class T>
-T DLL<T>::peek(int pos) {
+T DLL<T>::peek(int pos) const {
 	if((pos < 0) || (pos > size - 1)) {
 		throw -1;	// Trying to peek outside the range of valid indices
 	}

@@ -9,7 +9,7 @@ public:
   ~BST();
 
 
-  void insert(E value);
+  void insert(const E& value);
   bool searchNode(E value);
   E searchByKey(int key);
   bool deleteNode(E k);
@@ -100,40 +100,31 @@ bool BST<E>::isEmpty(){
 }
 
 template <class E>
-void BST<E>::insert(E value){
-  cout << '1' << endl;
+void BST<E>::insert(const E& value){
+  cout << flush;
   TreeNode<E> *node = new TreeNode<E>(value); //value is also Key
-
   if(root == NULL){
-	cout << '2' << endl;
     root = node;
-	cout << "2 be continued" << endl;
   }
   else{
-	cout << '3' << endl;
     TreeNode<E> *curr = root;
     TreeNode<E> *parent;
 
     while(true){
-      cout << '4' << endl;
       parent = curr;
 
       if(value < curr -> key){
         //go left
-		cout << '5' << endl;
         curr = curr -> left;
         if(curr == NULL){
-		  cout << '6' << endl;
           parent -> left = node;
           break;
         }
       }
       else{
         //go right
-		cout << '7' << endl;
         curr = curr -> right;
         if(curr == NULL){
-		  cout << '8' << endl;
           parent -> right = node;
           break;
         }

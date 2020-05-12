@@ -20,14 +20,6 @@ Student::Student(int i_id, string i_name, string i_year, string  i_major, double
 }
 
 Student::Student(const Student& other){
-  /*
-  id = other.getID();
-  name = other.getName();
-  year = other.getYear();
-  major = other.getMajor();
-  gpa = other.getGPA();
-  advisorID = other.getAdvisorID();
-  */
   id = other.id;
   name = other.name;
   year = other.year;
@@ -49,41 +41,41 @@ void Student::operator=(const Student& s){
   advisorID = s.advisorID;
 }
 
-bool Student::operator==(const Student& s){
+bool Student::operator==(const Student& s) const{
   return this->id == s.id;
 }
-bool Student::operator!=(const Student& s){
+bool Student::operator!=(const Student& s) const{
   return this->id != s.id;
 }
-bool Student::operator>(const Student& s){
+bool Student::operator>(const Student& s) const{
   return this->id > s.id;
 }
-bool Student::operator>=(const Student& s){
+bool Student::operator>=(const Student& s) const{
   return this->id >= s.id;
 }
-bool Student::operator<(const Student& s){
+bool Student::operator<(const Student& s) const{
   return this->id < s.id;
 }
-bool Student::operator<=(const Student& s){
+bool Student::operator<=(const Student& s) const{
   return this->id <= s.id;
 }
 
-bool Student::operator==(const int& id){
+bool Student::operator==(const int& id) const{
   return this->id == id;
 }
-bool Student::operator!=(const int& id){
+bool Student::operator!=(const int& id) const{
   return this->id != id;
 }
-bool Student::operator>(const int& id){
+bool Student::operator>(const int& id) const{
   return this->id > id;
 }
-bool Student::operator>=(const int& id){
+bool Student::operator>=(const int& id) const{
   return this->id >= id;
 }
-bool Student::operator<(const int& id){
+bool Student::operator<(const int& id) const{
   return this->id < id;
 }
-bool Student::operator<=(const int& id){
+bool Student::operator<=(const int& id) const{
   return this->id <= id;
 }
 

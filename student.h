@@ -11,19 +11,19 @@ public:
 
   void operator=(const Student& s);
   
-  bool operator==(const Student& s);
-  bool operator!=(const Student& s);
-  bool operator>(const Student& s);
-  bool operator>=(const Student& s);
-  bool operator<(const Student& s);
-  bool operator<=(const Student& s);
+  bool operator==(const Student& s) const;
+  bool operator!=(const Student& s) const;
+  bool operator>(const Student& s) const;
+  bool operator>=(const Student& s) const;
+  bool operator<(const Student& s) const;
+  bool operator<=(const Student& s) const;
   
-  bool operator==(const int& id);
-  bool operator!=(const int& id);
-  bool operator>(const int& id);
-  bool operator>=(const int& id);
-  bool operator<(const int& id);
-  bool operator<=(const int& id);
+  bool operator==(const int& id) const;
+  bool operator!=(const int& id) const;
+  bool operator>(const int& id) const;
+  bool operator>=(const int& id) const;
+  bool operator<(const int& id) const;
+  bool operator<=(const int& id) const;
   
   friend ostream& operator<<(ostream& os, const Student& stud);
 

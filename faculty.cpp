@@ -14,7 +14,7 @@ Faculty::Faculty(int facID, string name, string level, string dept, DLL<int> *ad
   this->name = name;
   this->level = level;
   this->dept = dept;
-  this->advIDs = advIDs;
+  this->advIDs = new DLL<int>(*advIDs);
 }
 
 Faculty::Faculty(const Faculty& other){
@@ -22,8 +22,7 @@ Faculty::Faculty(const Faculty& other){
   name = other.name;
   level = other.level;
   dept = other.dept;
-  cout << "ayyy" << endl;
-  advIDs = other.advIDs;
+  advIDs = new DLL<int>(*other.advIDs);
 }
 
 Faculty::~Faculty(){
@@ -35,44 +34,44 @@ void Faculty::operator=(const Faculty& f){
   name = f.name;
   level = f.level;
   dept = f.dept;
-  advIDs = f.advIDs;
+  advIDs = new DLL<int>(*f.advIDs);
 }
 
-bool Faculty::operator==(const Faculty& f){
+bool Faculty::operator==(const Faculty& f) const{
   return this->facID == f.facID;
 }
-bool Faculty::operator!=(const Faculty& f){
+bool Faculty::operator!=(const Faculty& f) const{
   return this->facID != f.facID;
 }
-bool Faculty::operator>(const Faculty& f){
+bool Faculty::operator>(const Faculty& f) const{
   return this->facID > f.facID;
 }
-bool Faculty::operator>=(const Faculty& f){
+bool Faculty::operator>=(const Faculty& f) const{
   return this->facID >= f.facID;
 }
-bool Faculty::operator<(const Faculty& f){
+bool Faculty::operator<(const Faculty& f) const{
   return this->facID < f.facID;
 }
-bool Faculty::operator<=(const Faculty& f){
+bool Faculty::operator<=(const Faculty& f) const{
   return this->facID <= f.facID;
 }
 
-bool Faculty::operator==(const int& id){
+bool Faculty::operator==(const int& id) const{
   return this->facID == id;
 }
-bool Faculty::operator!=(const int& id){
+bool Faculty::operator!=(const int& id) const{
   return this->facID != id;
 }
-bool Faculty::operator>(const int& id){
+bool Faculty::operator>(const int& id) const{
   return this->facID > id;
 }
-bool Faculty::operator>=(const int& id){
+bool Faculty::operator>=(const int& id) const{
   return this->facID >= id;
 }
-bool Faculty::operator<(const int& id){
+bool Faculty::operator<(const int& id) const{
   return this->facID < id;
 }
-bool Faculty::operator<=(const int& id){
+bool Faculty::operator<=(const int& id) const{
   return this->facID <= id;
 }
 
@@ -87,9 +86,30 @@ string Faculty::toString() const{
   outStr += name + "\t";
   outStr += level + "\t";
   outStr += dept + "\t";
-  outStr += "Advisees: " + to_string(advIDs->getSize());
+  outStr += to_string(advIDs->getSize()) + "Advisees";
   return outStr;
 }
+
+void Faculty::setFacID(int newFacID){
+  facID = newFacID;
+}
+
+void Faculty::setName(string newName){
+  name = newName;
+}
+
+void Faculty::setLevel(string newLevel){
+  level = newLevel;
+}
+
+void Faculty::setDept(string newDept){
+  dept = newDept;
+}
+
+void Faculty::setAdvIDs(DLL<int>* newIDs){
+  advIDs = new DLL<int>(*newIDs);
+}
+
 
 int Faculty::getFacID(){
   return facID;
@@ -108,5 +128,5 @@ string Faculty::getDept(){
 }
 
 DLL<int>* Faculty::getAdvIDs(){
-  return advIDs;
+  return new DLL<int>(*advIDs);
 }

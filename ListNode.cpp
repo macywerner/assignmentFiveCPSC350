@@ -5,7 +5,8 @@
 // 04/18/2020
 
 #include <cstdlib>	// Gives definition of "NULL"
-
+#include <iostream>
+#include <string>
 template <class T>
 class ListNode {
 
@@ -40,18 +41,30 @@ ListNode<T>::ListNode(T val) {
 
 template <class T>
 ListNode<T>::ListNode(const ListNode& ln) {
+	
 	data = ln.data;
-	next = ln.next;
-	prev = ln.prev;
+	
+	if(ln.next == NULL) {
+		next = NULL;
+	}
+	else {
+		next = new ListNode<T>(*ln.next);
+	}
+
+	if(ln.prev == NULL) {
+		prev = NULL;
+	}
+	else {
+		prev = new ListNode<T>(*ln.prev);
+	}
 }
 
 template <class T>
 ListNode<T>::~ListNode() {
+	
 	if(next != NULL) {	// As it is, recursively deletes all following nodes; Set next to NULL to delete only this node.
 		delete next;
 	}
-	// The following line is commented-out to allow custom objects (non-pointers) to be used in the doubly-linked lists.
-	//delete data;
 }
 
 template <class T>

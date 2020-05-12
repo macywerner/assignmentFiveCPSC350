@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include "DLL.cpp"
 using namespace std;
 
@@ -11,27 +12,27 @@ public:
 
   void operator=(const Faculty& f);
   
-  bool operator==(const Faculty& f);
-  bool operator!=(const Faculty& f);
-  bool operator>(const Faculty& f);
-  bool operator>=(const Faculty& f);
-  bool operator<(const Faculty& f);
-  bool operator<=(const Faculty& f);
+  bool operator==(const Faculty& f) const;
+  bool operator!=(const Faculty& f) const;
+  bool operator>(const Faculty& f) const;
+  bool operator>=(const Faculty& f) const;
+  bool operator<(const Faculty& f) const;
+  bool operator<=(const Faculty& f) const;
   
-  bool operator==(const int& id);
-  bool operator!=(const int& id);
-  bool operator>(const int& id);
-  bool operator>=(const int& id);
-  bool operator<(const int& id);
-  bool operator<=(const int& id);
+  bool operator==(const int& id) const;
+  bool operator!=(const int& id) const;
+  bool operator>(const int& id) const;
+  bool operator>=(const int& id) const;
+  bool operator<(const int& id) const;
+  bool operator<=(const int& id) const;
   
   friend ostream& operator<<(ostream& os, const Faculty& stud);
 
-  int setFacID();
-  string setName();
-  string setLevel();
-  string setDept();
-  DLL<int>* setIDs();
+  void setFacID(int newFacID);
+  void setName(string newName);
+  void setLevel(string newLevel);
+  void setDept(string newDept);
+  void setAdvIDs(DLL<int>* newAdvIDs);
   
   int getFacID();
   string getName();

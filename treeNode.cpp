@@ -61,7 +61,6 @@ TreeNode<E>::TreeNode(const TreeNode& tn){
 //template <int K, class V>
 template <class E>
 TreeNode<E>::~TreeNode(){
-  cout << "at R'lyeh," << endl;
   if(left != NULL) {
     delete left;
   }

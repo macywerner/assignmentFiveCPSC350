@@ -88,10 +88,20 @@ bool Student::operator<=(const int& id){
 }
 
 ostream& operator<<(ostream& os, const Student& stud){
-  os << stud.id << '\t' << stud.name;
+  os << stud.toString();
   return os;
 }
 
+string Student::toString() const{
+  string outStr = "";
+  outStr += to_string(id) + "\t";
+  outStr += name + "\t";
+  outStr += year + "\t";
+  outStr += major + "\t";
+  outStr += to_string(gpa) + "\t";
+  outStr += to_string(advisorID);
+  return outStr;
+}
 
 
 int Student::getID(){

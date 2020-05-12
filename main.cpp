@@ -226,20 +226,20 @@ int main(int argc, char** argv){
   
   //Student foo = Student(1, "Foo Bar", "2020", "Computer Science", 3.4, 666);
   
-
+  Student studC = Student(15, "Leeroy Jenkins", "2020", "Computer Science", 3.4, 666);
   stud->insert(Student(10, "Foo Bar", "2020", "Computer Science", 3.4, 666));
   stud->insert(Student(5, "Bart Simpson", "2020", "Computer Science", 3.4, 666));
-  stud->insert(Student(15, "Leeroy Jenkins", "2020", "Computer Science", 3.4, 666));
+  stud->insert(studC);
  
   stud->printTree();
   
-  stud->deleteNode(15);
+  //cout << '[' << stud->searchByKey(15) << ']' << endl;
+  stud->deleteByKey(15);
   
   cout << endl;
   stud->printTree();
 
   delete stud;
-  
   
   return 0;
 }

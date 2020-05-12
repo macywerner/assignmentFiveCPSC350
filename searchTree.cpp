@@ -10,8 +10,10 @@ public:
 
 
   void insert(E value);
-  bool searchNode(int value);
-  bool deleteNode(int k);
+  bool searchNode(E value);
+  E searchByKey(int key);
+  bool deleteNode(E k);
+  bool deleteByKey(int key);
   bool isEmpty();
 
   TreeNode<E> *getMin();
@@ -132,7 +134,7 @@ void BST<E>::insert(E value){
 }
 
 template <class E>
-bool BST<E>::searchNode(int value){
+bool BST<E>::searchNode(E value){
   if(isEmpty()){
     return false;
   }
@@ -155,7 +157,30 @@ bool BST<E>::searchNode(int value){
 }
 
 template <class E>
-bool BST<E>::deleteNode(int k){
+E BST<E>::searchByKey(int key){
+  if(isEmpty()){
+    return E();
+  }
+  else{
+    TreeNode<E> *curr = root;
+
+    while(curr -> key != key){
+      if(curr -> key > key){
+		curr = curr ->left;
+      }
+      else{
+		curr = curr -> right;
+      }
+      if(curr == NULL){
+        return E();
+      }
+    }
+    return curr->key;
+  }
+}
+
+template <class E>
+bool BST<E>::deleteNode(E k){
   if(isEmpty()){
     return false;
   }
@@ -237,6 +262,11 @@ bool BST<E>::deleteNode(int k){
 	successor -> left = curr -> left;
 	return true;
   }
+}
+
+template <class E>
+bool BST<E>::deleteByKey(int key){
+  return deleteNode(searchByKey(key));
 }
 
 template <class E>

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 class Student{
@@ -39,6 +40,8 @@ public:
   string getMajor();
   double getGPA();
   int getAdvisorID();
+  
+  string toString() const;
 
 private:
   int id;

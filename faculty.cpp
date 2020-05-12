@@ -2,22 +2,97 @@
 using namespace std;
 
 Faculty::Faculty(){
-  id = 0;
+  facID = 0;
   name = "";
   level = "";
-  department = "";
+  dept = "";
+  advIDs = new DLL<int>();
 }
 
-Faculty::Faculty(int i_id, string i_name, string i_level, string  i_department){
-  id = i_id;
-  name = i_name;
-  level = i_level;
-  department = i_department;
-  //ids = i_IDs;
+Faculty::Faculty(int facID, string name, string level, string dept, DLL<int> *advIDs){
+  this->facID = facID;
+  this->name = name;
+  this->level = level;
+  this->dept = dept;
+  this->advIDs = advIDs;
 }
 
-int Faculty::getID(){
-  return id;
+Faculty::Faculty(const Faculty& other){
+  facID = other.facID;
+  name = other.name;
+  level = other.level;
+  dept = other.dept;
+  cout << "ayyy" << endl;
+  advIDs = other.advIDs;
+}
+
+Faculty::~Faculty(){
+	delete advIDs;
+}
+
+void Faculty::operator=(const Faculty& f){
+  facID = f.facID;
+  name = f.name;
+  level = f.level;
+  dept = f.dept;
+  advIDs = f.advIDs;
+}
+
+bool Faculty::operator==(const Faculty& f){
+  return this->facID == f.facID;
+}
+bool Faculty::operator!=(const Faculty& f){
+  return this->facID != f.facID;
+}
+bool Faculty::operator>(const Faculty& f){
+  return this->facID > f.facID;
+}
+bool Faculty::operator>=(const Faculty& f){
+  return this->facID >= f.facID;
+}
+bool Faculty::operator<(const Faculty& f){
+  return this->facID < f.facID;
+}
+bool Faculty::operator<=(const Faculty& f){
+  return this->facID <= f.facID;
+}
+
+bool Faculty::operator==(const int& id){
+  return this->facID == id;
+}
+bool Faculty::operator!=(const int& id){
+  return this->facID != id;
+}
+bool Faculty::operator>(const int& id){
+  return this->facID > id;
+}
+bool Faculty::operator>=(const int& id){
+  return this->facID >= id;
+}
+bool Faculty::operator<(const int& id){
+  return this->facID < id;
+}
+bool Faculty::operator<=(const int& id){
+  return this->facID <= id;
+}
+
+ostream& operator<<(ostream& os, const Faculty& stud){
+  os << stud.toString();
+  return os;
+}
+
+string Faculty::toString() const{
+  string outStr = "";
+  outStr += to_string(facID) + "\t";
+  outStr += name + "\t";
+  outStr += level + "\t";
+  outStr += dept + "\t";
+  outStr += "Advisees: " + to_string(advIDs->getSize());
+  return outStr;
+}
+
+int Faculty::getFacID(){
+  return facID;
 }
 
 string Faculty::getName(){
@@ -28,10 +103,10 @@ string Faculty::getLevel(){
   return level;
 }
 
-string Faculty::getDepartment(){
-  return department;
+string Faculty::getDept(){
+  return dept;
 }
 
-/*Faculty::getIDs(){
-  return ids;
-}*/
+DLL<int>* Faculty::getAdvIDs(){
+  return advIDs;
+}

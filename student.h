@@ -16,7 +16,7 @@ public:
   bool operator>(const Student& s);
   bool operator>=(const Student& s);
   bool operator<(const Student& s);
-  bool operator<=(const Student& id);
+  bool operator<=(const Student& s);
   
   bool operator==(const int& id);
   bool operator!=(const int& id);

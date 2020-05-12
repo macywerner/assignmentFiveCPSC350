@@ -8,8 +8,12 @@ public:
   TreeNode();
   //TreeNode(K k, V v);
   TreeNode(E e);
+  TreeNode(const TreeNode& tn);
   ~TreeNode();
   //virtual ~TreeNode();
+
+  void operator=(const TreeNode& tn);
+
 
   //int key;
   E key;
@@ -36,9 +40,23 @@ TreeNode<E>::TreeNode(E key){
   right = NULL;
 }
 
+template <class E>
+TreeNode<E>::TreeNode(const TreeNode& tn){
+  key = tn.key;
+  left = tn.left;
+  right = tn.right;
+}
+
 //template <int K, class V>
 template <class E>
 TreeNode<E>::~TreeNode(){
   delete left;
   delete right;
+}
+
+template <class E>
+void TreeNode<E>::operator=(const TreeNode& tn){
+  key = tn.key;
+  left = tn.left;
+  right = tn.right;
 }

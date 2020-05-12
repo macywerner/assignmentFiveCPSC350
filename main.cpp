@@ -223,6 +223,7 @@ int main(int argc, char** argv){
   
   
   BST<Student> *stud = new BST<Student>();
+  BST<Faculty> *fac = new BST<Faculty>();
   
   //Student foo = Student(1, "Foo Bar", "2020", "Computer Science", 3.4, 666);
   
@@ -232,14 +233,43 @@ int main(int argc, char** argv){
   stud->insert(studC);
  
   stud->printTree();
+  cout << endl;
   
   //cout << '[' << stud->searchByKey(15) << ']' << endl;
   stud->deleteByKey(15);
   
-  cout << endl;
   stud->printTree();
+  cout << endl;
+
+
+  cout << 'a' << endl;
+  
+  Faculty facA = Faculty(20, "Dr. Seuss", "Lecturer", "Literature", new DLL<int>());
+  cout << "a2" << endl;
+  fac->insert(facA);
+  cout << 'b' << endl;
+  fac->insert(Faculty(25, "Dr. Phil", "Assistant Prof", "Psychology", new DLL<int>()));
+  cout << 'c' << endl;
+  fac->insert(Faculty(30, "Dr. Freeman", "Researcher", "Theoretical Physics", new DLL<int>()));
+
+
+  cout << 'd' << endl;
+  fac->printTree();
+  cout << endl;
+  
+  cout << 'e' << endl;
+  fac->deleteByKey(25);
+  
+  cout << 'f' << endl;
+  fac->printTree();
+  cout << endl;
+
+
+
 
   delete stud;
+  cout << 'g' << endl;
+  delete fac;
   
   return 0;
 }

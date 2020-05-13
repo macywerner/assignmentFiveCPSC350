@@ -86,7 +86,7 @@ string Faculty::toString() const{
   outStr += name + "\t";
   outStr += level + "\t";
   outStr += dept + "\t";
-  outStr += to_string(advIDs->getSize()) + "Advisees";
+  outStr += to_string(advIDs->getSize()) + " Advisees";
   return outStr;
 }
 

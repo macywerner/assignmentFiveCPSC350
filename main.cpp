@@ -110,17 +110,26 @@ int main(int argc, char** argv){
   */
   
   Database *db = new Database();
-  
-  db->printAllStudents();
+  /*
+  db->printAllFaculty();
 
-  db->addStudent();
+  db->addFaculty();
   
-  db->printAllStudents();
+  db->printAllFaculty();
   
-  db->remStudent();
+  cout << "Removing..." << endl;
+  db->remFaculty();
   
-  db->printAllStudents();
+  cout << "Printing..." << endl;
+  db->printAllFaculty();
 
+  cout << "Deleting..." << endl;
+  delete db;
+  cout << "Done." << endl;
+  */
+  
+  db->mainLoop();
+  
   delete db;
   
   return 0;

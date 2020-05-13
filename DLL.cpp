@@ -50,6 +50,7 @@ DLL<T>::DLL() {
 
 template <class T>
 DLL<T>::DLL(const DLL& dll) {
+	size = 0;
 	for(int i = 0; i < dll.size; ++i) {
 		insertBack(dll.peek(i));
 	}

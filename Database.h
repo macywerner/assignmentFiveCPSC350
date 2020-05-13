@@ -13,6 +13,11 @@ class Database {
 		~Database();
 		
 		string prompt(string msg);
+		int promptInt(string msg);
+		bool checkInt(string response);
+		void scoldBadInt();
+		bool checkStudEmpty(string msg);
+		bool checkFacEmpty(string msg);
 		
 		void printAllStudents();
 		void printAllFaculty();
@@ -35,5 +40,4 @@ class Database {
 	private:
 		BST<Faculty> *masterFaculty;
 		BST<Student> *masterStudent;
-		int choice;
 };

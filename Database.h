@@ -12,6 +12,9 @@ class Database {
 		Database();
 		~Database();
 		
+		static const string STUD_FILE;
+		static const string FAC_FILE;
+		
 		string prompt(string msg);
 		int promptInt(string msg);
 		bool checkInt(string response);

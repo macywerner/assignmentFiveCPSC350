@@ -1,9 +1,35 @@
 #include "Database.h"
 
+const string Database::STUD_FILE = "studentTable.txt";
+const string Database::FAC_FILE = "facultyTable.txt";
+
 Database::Database() {
-	masterFaculty = new BST<Faculty>();
+	//masterFaculty = new BST<Faculty>();
+	//masterStudent = new BST<Student>();
+	
+	ifstream studIn;
+	studIn.open(STUD_FILE);
 	masterStudent = new BST<Student>();
+	if(!studIn.is_open()){
+		cout << "Could not find " << STUD_FILE << ". Starting with an empty student table." << endl;
+	}
+	else{
+		masterStudent->deSerialize(studIn);
+	}
+	studIn.close();
+	
+	ifstream facIn;
+	facIn.open(FAC_FILE);
+	masterFaculty = new BST<Faculty>();
+	if(!facIn.is_open()){
+		cout << "Could not find " << FAC_FILE << ". Starting with an empty faculty table." << endl;
+	}
+	else{
+		masterFaculty->deSerialize(facIn);
+	}
+	facIn.close();
 }
+
 
 Database::~Database() {
 	delete masterFaculty;
@@ -177,7 +203,29 @@ void Database::rollback() {
 }
 
 void Database::exit() {
+	ofstream studOut;
+	studOut.open(STUD_FILE);
+	if(!studOut.is_open()){
+		cout << "Problem opening " << STUD_FILE << endl;
+	}
+	else{
+		cout << "Writing student table to disk." << endl;
+		masterStudent->serialize(studOut);
+		studOut.close();
+	}
 	
+	ofstream facOut;
+	facOut.open(FAC_FILE);
+	if(!facOut.is_open()){
+		cout << "Problem opening " << FAC_FILE << endl;
+	}
+	else{
+		cout << "Writing faculty table to disk." << endl;
+		masterFaculty->serialize(facOut);
+		facOut.close();
+	}
+	
+	cout << "Done saving. Have a nice day." << endl;
 }
 
 void Database::mainLoop() {

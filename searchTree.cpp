@@ -26,7 +26,7 @@ public:
   TreeNode<E> *getSuccessor(TreeNode<E> *d);
   void printTree(TreeNode<E> *node);
   void printTree();
-  void printAscendingTree(TreeNode<E> *node);
+  void printDescendingTree(TreeNode<E> *node);
   void serialize(ofstream& file);
   void deSerialize(ifstream& file);
   void serialize(TreeNode<E> *root, ofstream& file);
@@ -63,7 +63,7 @@ void BST<E>::printTree(){
 }
 
 template <class E>
-void BST<E>::printAscendingTree(TreeNode<E> *node){
+void BST<E>::printDescendingTree(TreeNode<E> *node){
   if(node == NULL){
     return;
   }
@@ -296,6 +296,7 @@ TreeNode<E> *BST<E>::getSuccessor(TreeNode<E> *d){
   return successor;
 }
 
+//attempt at serialization and deserialization 
 template <class E>
 void BST<E>::serialize(ofstream& file){
   return serialize(root, file);
@@ -324,7 +325,6 @@ void BST<E>::deSerialize(TreeNode<E> *root, ifstream& file){
   }
   else{
     while(!file.eof()){
-      //TreeNode root = new TreeNode(file.getline());
       insert(root -> key);
       deSerialize(root->left, file);
       deSerialize(root->right, file);

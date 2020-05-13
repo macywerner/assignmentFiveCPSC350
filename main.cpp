@@ -7,6 +7,8 @@
 using namespace std;
 
 int main(int argc, char** argv){
+  
+  //check for existing tables and deserialize if so
   /*
   ifstream inFSOne;
   BST<Faculty>* masterFaculty = new BST<Faculty>();

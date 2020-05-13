@@ -1,4 +1,8 @@
+#ifndef SEARCHTREE_CPP
+#define SEARCHTREE_CPP
+
 #include "treeNode.cpp"
+#include <fstream>
 using namespace std;
 
 template <class E>
@@ -23,6 +27,10 @@ public:
   void printTree(TreeNode<E> *node);
   void printTree();
   void printAscendingTree(TreeNode<E> *node);
+  void serialize(ofstream& file);
+  void deSerialize(ifstream& file);
+  void serialize(TreeNode<E> *root, ofstream& file);
+  void deSerialize(TreeNode<E> *root, ifstream& file);
 
   TreeNode<E> *root;
 };
@@ -184,7 +192,7 @@ bool BST<E>::deleteNode(E k){
   if(isEmpty()){
     return false;
   }
-  
+
   // Looking for the value in the tree
   TreeNode<E> *curr = root;
   TreeNode<E> *parent = root;
@@ -219,7 +227,7 @@ bool BST<E>::deleteNode(E k){
       parent -> right = NULL;
     }
   }
-  
+
   // One child; child is left
   else if(curr -> right == NULL){
     if(curr == root){
@@ -232,7 +240,7 @@ bool BST<E>::deleteNode(E k){
       parent -> right = curr -> left;
     }
   }
-  
+
   // One child; child is right
   else if(curr -> left == NULL){
     if(curr == root){
@@ -245,7 +253,7 @@ bool BST<E>::deleteNode(E k){
       parent -> right = curr -> right;
     }
   }
-  
+
   // Two children
   else{
     TreeNode<E> *successor = getSuccessor(curr);
@@ -287,3 +295,41 @@ TreeNode<E> *BST<E>::getSuccessor(TreeNode<E> *d){
   }
   return successor;
 }
+
+template <class E>
+void BST<E>::serialize(ofstream& file){
+  return serialize(root, file);
+}
+
+template <class E>
+void BST<E>::deSerialize(ifstream& file){
+  return deSerialize(root, file);
+}
+
+template <class E>
+void BST<E>::serialize(TreeNode<E> *root, ofstream& file){
+  if (root == NULL){
+    return;
+  }
+  file << root -> key << "/n";
+  serialize(root->left, file);
+  serialize(root->right, file);
+
+}
+
+template <class E>
+void BST<E>::deSerialize(TreeNode<E> *root, ifstream& file){
+  if (root == NULL){
+    return;
+  }
+  else{
+    while(!file.eof()){
+      //TreeNode root = new TreeNode(file.getline());
+      insert(root -> key);
+      deSerialize(root->left, file);
+      deSerialize(root->right, file);
+    }
+  }
+}
+
+#endif

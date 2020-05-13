@@ -1,3 +1,6 @@
+#ifndef FACULTY_H
+#define FACULTY_H
+
 #include <iostream>
 #include <string>
 #include "DLL.cpp"
@@ -51,3 +54,5 @@ private:
 
   
 };
+
+#endif

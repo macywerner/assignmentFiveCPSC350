@@ -4,12 +4,11 @@
 #include <iostream>
 using namespace std;
 
-//template <int K, class V>
+
 template <class E>
 class TreeNode{
 public:
   TreeNode();
-  //TreeNode(K k, V v);
   TreeNode(const E& e);
   TreeNode(const TreeNode& tn);
   ~TreeNode();
@@ -18,15 +17,14 @@ public:
   void operator=(const TreeNode& tn);
 
 
-  //int key;
+  
   E key;
-  //V value;
   TreeNode *left;
   TreeNode *right;
 };
 
 //.cpp implementation
-//template <int K, class V>
+
 template <class E>
 TreeNode<E>::TreeNode(){
   key = 0;
@@ -34,7 +32,6 @@ TreeNode<E>::TreeNode(){
   right = NULL;
 }
 
-//template <int K, class V>
 template <class E>
 TreeNode<E>::TreeNode(const E& e){
   key = e;
@@ -61,7 +58,6 @@ TreeNode<E>::TreeNode(const TreeNode& tn){
   }
 }
 
-//template <int K, class V>
 template <class E>
 TreeNode<E>::~TreeNode(){
   if(left != NULL) {

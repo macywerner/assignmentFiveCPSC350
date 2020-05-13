@@ -10,6 +10,7 @@ int main(int argc, char** argv){
   
   //check for existing tables and deserialize if so
   /*
+  //for faculty
   ifstream inFSOne;
   BST<Faculty>* masterFaculty = new BST<Faculty>();
 
@@ -21,7 +22,8 @@ int main(int argc, char** argv){
   else{
     masterFaculty->deSerialize(inFSOne);
   }
-
+  
+  //for student
   ifstream inFSTwo;
   BST<Student>* masterStudent = new BST<Student>();
 
@@ -33,9 +35,6 @@ int main(int argc, char** argv){
   else{
     masterStudent->deSerialize(inFSTwo);
   }
-
-  printMenu();
-  input();
   
   delete masterFaculty;
   delete masterStudent;

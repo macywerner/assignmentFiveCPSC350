@@ -1,3 +1,6 @@
+#ifndef SEARCHTREE_CPP
+#define SEARCHTREE_CPP
+
 #include "treeNode.cpp"
 using namespace std;
 
@@ -287,3 +290,5 @@ TreeNode<E> *BST<E>::getSuccessor(TreeNode<E> *d){
   }
   return successor;
 }
+
+#endif

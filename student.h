@@ -1,3 +1,6 @@
+#ifndef STUDENT_H
+#define STUDENT_H
+
 #include <iostream>
 #include <string>
 using namespace std;
@@ -27,12 +30,12 @@ public:
   
   friend ostream& operator<<(ostream& os, const Student& stud);
 
-  int setID();
-  string setName();
-  string setYear();
-  string setMajor();
-  double setGPA();
-  int setAdvisorID();
+  void setID(int newID);
+  void setName(string newName);
+  void setYear(string newYear);
+  void setMajor(string newMajor);
+  void setGPA(double newGPA);
+  void setAdvisorID(int newAdvisorID);
 
   int getID();
   string getName();
@@ -52,3 +55,5 @@ private:
   int advisorID;
 
 };
+
+#endif

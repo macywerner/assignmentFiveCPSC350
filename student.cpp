@@ -96,6 +96,26 @@ string Student::toString() const{
 }
 
 
+void Student::setID(int newID){
+  id = newID;
+}
+void Student::setName(string newName){
+  name = newName;
+}
+void Student::setYear(string newYear){
+  year = newYear;
+}
+void Student::setMajor(string newMajor){
+  major = newMajor;
+}
+void Student::setGPA(double newGPA){
+  gpa = newGPA;
+}
+void Student::setAdvisorID(int newAdvisorID){
+  advisorID = newAdvisorID;
+}
+
+
 int Student::getID(){
   return id;
 }

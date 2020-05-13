@@ -1,3 +1,6 @@
+#ifndef TREENODE_CPP
+#define TREENODE_CPP
+
 #include <iostream>
 using namespace std;
 
@@ -75,3 +78,5 @@ void TreeNode<E>::operator=(const TreeNode& tn){
   left = tn.left;
   right = tn.right;
 }
+
+#endif

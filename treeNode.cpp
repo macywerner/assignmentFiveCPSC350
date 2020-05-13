@@ -1,12 +1,20 @@
+// Logan Welsh
+// Student ID: 2325215
+// Macy Werner
+// Student ID: 2327782
+// Assignment 5 CPSC350
+
+#ifndef TREENODE_CPP
+#define TREENODE_CPP
+
 #include <iostream>
 using namespace std;
 
-//template <int K, class V>
+
 template <class E>
 class TreeNode{
 public:
   TreeNode();
-  //TreeNode(K k, V v);
   TreeNode(const E& e);
   TreeNode(const TreeNode& tn);
   ~TreeNode();
@@ -15,15 +23,14 @@ public:
   void operator=(const TreeNode& tn);
 
 
-  //int key;
+  
   E key;
-  //V value;
   TreeNode *left;
   TreeNode *right;
 };
 
 //.cpp implementation
-//template <int K, class V>
+
 template <class E>
 TreeNode<E>::TreeNode(){
   key = 0;
@@ -31,7 +38,6 @@ TreeNode<E>::TreeNode(){
   right = NULL;
 }
 
-//template <int K, class V>
 template <class E>
 TreeNode<E>::TreeNode(const E& e){
   key = e;
@@ -58,7 +64,6 @@ TreeNode<E>::TreeNode(const TreeNode& tn){
   }
 }
 
-//template <int K, class V>
 template <class E>
 TreeNode<E>::~TreeNode(){
   if(left != NULL) {
@@ -75,3 +80,5 @@ void TreeNode<E>::operator=(const TreeNode& tn){
   left = tn.left;
   right = tn.right;
 }
+
+#endif

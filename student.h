@@ -1,3 +1,12 @@
+// Logan Welsh
+// Student ID: 2325215
+// Macy Werner
+// Student ID: 2327782
+// Assignment 5 CPSC350
+
+#ifndef STUDENT_H
+#define STUDENT_H
+
 #include <iostream>
 #include <string>
 using namespace std;
@@ -27,12 +36,20 @@ public:
   
   friend ostream& operator<<(ostream& os, const Student& stud);
 
+  void setID(int newID);
+  void setName(string newName);
+  void setYear(string newYear);
+  void setMajor(string newMajor);
+  void setGPA(double newGPA);
+  void setAdvisorID(int newAdvisorID);
+
   int setID();
   string setName();
   string setYear();
   string setMajor();
   double setGPA();
   int setAdvisorID();
+
 
   int getID();
   string getName();
@@ -52,3 +69,5 @@ private:
   int advisorID;
 
 };
+
+#endif

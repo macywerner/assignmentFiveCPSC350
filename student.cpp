@@ -1,3 +1,9 @@
+// Logan Welsh
+// Student ID: 2325215
+// Macy Werner
+// Student ID: 2327782
+// Assignment 5 CPSC350
+
 #include "student.h"
 using namespace std;
 
@@ -93,6 +99,26 @@ string Student::toString() const{
   outStr += to_string(gpa) + "\t";
   outStr += to_string(advisorID);
   return outStr;
+}
+
+
+void Student::setID(int newID){
+  id = newID;
+}
+void Student::setName(string newName){
+  name = newName;
+}
+void Student::setYear(string newYear){
+  year = newYear;
+}
+void Student::setMajor(string newMajor){
+  major = newMajor;
+}
+void Student::setGPA(double newGPA){
+  gpa = newGPA;
+}
+void Student::setAdvisorID(int newAdvisorID){
+  advisorID = newAdvisorID;
 }
 
 

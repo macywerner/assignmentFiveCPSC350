@@ -1,3 +1,9 @@
+// Logan Welsh
+// Student ID: 2325215
+// Macy Werner
+// Student ID: 2327782
+// Assignment 5 CPSC350
+
 #include "faculty.h"
 using namespace std;
 
@@ -86,7 +92,7 @@ string Faculty::toString() const{
   outStr += name + "\t";
   outStr += level + "\t";
   outStr += dept + "\t";
-  outStr += to_string(advIDs->getSize()) + "Advisees";
+  outStr += to_string(advIDs->getSize()) + " Advisees";
   return outStr;
 }
 

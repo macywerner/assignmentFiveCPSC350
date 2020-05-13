@@ -1,3 +1,12 @@
+// Logan Welsh
+// Student ID: 2325215
+// Macy Werner
+// Student ID: 2327782
+// Assignment 5 CPSC350
+
+#ifndef FACULTY_H
+#define FACULTY_H
+
 #include <iostream>
 #include <string>
 #include "DLL.cpp"
@@ -51,3 +60,5 @@ private:
 
   
 };
+
+#endif

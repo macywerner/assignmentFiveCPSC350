@@ -14,39 +14,6 @@ using namespace std;
 
 int main(int argc, char** argv){
   
-  //check for existing tables and deserialize if so
-  /*
-  ifstream inFSOne;
-  BST<Faculty>* masterFaculty = new BST<Faculty>();
-
-  inFSOne.open("facultyTable.txt");
-
-  if(!inFSOne.is_open()){
-    cout << "Could not open file. Creating facultyTable.txt" << endl;
-  }
-  else{
-    masterFaculty->deSerialize(inFSOne);
-  }
-
-  ifstream inFSTwo;
-  BST<Student>* masterStudent = new BST<Student>();
-
-  inFSTwo.open("studentTable.txt");
-
-  if(!inFSTwo.is_open()){
-    cout << "Could not open file. Creating studentTable.txt" << endl;
-  }
-  else{
-    masterStudent->deSerialize(inFSTwo);
-  }
-
-  printMenu();
-  input();
-  
-  delete masterFaculty;
-  delete masterStudent;
-  */
-  
   Database *db = new Database();
   
   db->mainLoop();

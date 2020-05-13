@@ -1,18 +1,38 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 class Student{
 public:
   Student();
   Student(int id, string name, string year, string major, double gpa, int advisorID);
+  Student(const Student& other);
   ~Student();
 
-  int id;
-  string name;
-  string year;
-  string major;
-  double gpa;
-  int advisorID;
+  void operator=(const Student& s);
+  
+  bool operator==(const Student& s) const;
+  bool operator!=(const Student& s) const;
+  bool operator>(const Student& s) const;
+  bool operator>=(const Student& s) const;
+  bool operator<(const Student& s) const;
+  bool operator<=(const Student& s) const;
+  
+  bool operator==(const int& id) const;
+  bool operator!=(const int& id) const;
+  bool operator>(const int& id) const;
+  bool operator>=(const int& id) const;
+  bool operator<(const int& id) const;
+  bool operator<=(const int& id) const;
+  
+  friend ostream& operator<<(ostream& os, const Student& stud);
+
+  int setID();
+  string setName();
+  string setYear();
+  string setMajor();
+  double setGPA();
+  int setAdvisorID();
 
   int getID();
   string getName();
@@ -20,6 +40,15 @@ public:
   string getMajor();
   double getGPA();
   int getAdvisorID();
+  
+  string toString() const;
 
+private:
+  int id;
+  string name;
+  string year;
+  string major;
+  double gpa;
+  int advisorID;
 
 };

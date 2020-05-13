@@ -4,6 +4,8 @@
 // Student ID: 2327782
 // Assignment 5 CPSC350
 
+// Database CLI driver.
+
 #include "searchTree.cpp"
 #include "student.h"
 #include "faculty.h"

@@ -37,6 +37,14 @@ public:
   void setGPA(double newGPA);
   void setAdvisorID(int newAdvisorID);
 
+  int setID();
+  string setName();
+  string setYear();
+  string setMajor();
+  double setGPA();
+  int setAdvisorID();
+
+
   int getID();
   string getName();
   string getYear();

@@ -6,100 +6,30 @@
 
 using namespace std;
 
-
-int input(){
-  string answer;
-  cout << "Enter the number of the action you wish: ";
-  cin >> answer;
-  int ansInt = stoi(answer);
-
-  switch(ansInt){
-    case 1:
-      //One();
-      break;
-    case 2:
-      //Two();
-      break;
-    case 3:
-      //Three();
-      break;
-    case 4:
-      //Four();
-      break;
-    case 5:
-      //Five();
-      break;
-    case 6:
-      //Six();
-      break;
-    case 7:
-      //Seven();
-      break;
-    case 8:
-      //Eight();
-      break;
-    case 9:
-      //Nine();
-      break;
-    case 10:
-      //Ten();
-      break;
-    case 11:
-      //Eleven();
-      break;
-    case 12:
-      //Twelve();
-      break;
-    case 13:
-      //Thirteen();
-      break;
-    case 14:
-      //Fourteen();
-      break;
-  }
-
-}
-
-
 int main(int argc, char** argv){
-
   /*
   ifstream inFSOne;
-  //outstream outFSOne;
-  BST<Faculty> *masterFaculty = new BST<Faculty>();
+  BST<Faculty>* masterFaculty = new BST<Faculty>();
 
   inFSOne.open("facultyTable.txt");
 
-  int currentFacultyID = 0;
-
   if(!inFSOne.is_open()){
     cout << "Could not open file. Creating facultyTable.txt" << endl;
-    //outFSOne.open("facultyTable.txt");
   }
   else{
-    while(!inFSOne.eof()){
-      inFSOne >> currentFacultyID;
-      //read file into tree
-
-    }
+    masterFaculty->deSerialize(inFSOne);
   }
 
   ifstream inFSTwo;
-  //outstream outFSTwo;
-  BST<Student> *masterStudent = new BST<Student>();
+  BST<Student>* masterStudent = new BST<Student>();
 
   inFSTwo.open("studentTable.txt");
 
   if(!inFSTwo.is_open()){
     cout << "Could not open file. Creating studentTable.txt" << endl;
-    //outFSTwo.open("studentTable.txt");
   }
   else{
-    while(!inFSTwo.eof()){
-      inFSOne >> currentFacultyID;
-      //read file into tree
-
-    }
+    masterStudent->deSerialize(inFSTwo);
   }
 
   printMenu();
@@ -110,23 +40,6 @@ int main(int argc, char** argv){
   */
   
   Database *db = new Database();
-  /*
-  db->printAllFaculty();
-
-  db->addFaculty();
-  
-  db->printAllFaculty();
-  
-  cout << "Removing..." << endl;
-  db->remFaculty();
-  
-  cout << "Printing..." << endl;
-  db->printAllFaculty();
-
-  cout << "Deleting..." << endl;
-  delete db;
-  cout << "Done." << endl;
-  */
   
   db->mainLoop();
   

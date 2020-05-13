@@ -1,8 +1,8 @@
-// CPSC-350-01 Assignment 4
-// ListNode.cpp
-// Template class for a node in a doubly-linked list.
 // Logan Welsh
-// 04/18/2020
+// Student ID: 2325215
+// Macy Werner
+// Student ID: 2327782
+// Assignment 5 CPSC350
 
 #include <cstdlib>	// Gives definition of "NULL"
 #include <iostream>

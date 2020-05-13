@@ -191,15 +191,15 @@ void Database::remFaculty() {
 }
 
 void Database::setNewAdvisor() {
-	
+	cout << "Feature not yet implemented." << endl;
 }
 
 void Database::remAdvisee() {
-	
+	cout << "Feature not yet implemented." << endl;
 }
 
 void Database::rollback() {
-	
+	cout << "Feature not yet implemented." << endl;
 }
 
 void Database::exit() {
@@ -318,15 +318,3 @@ void Database::mainLoop() {
 		}
 	}
 }
-
-void Database::writeToDisk() {
-	
-}
-
-/*
-void Database::() {
-	
-}
-
-
-*/

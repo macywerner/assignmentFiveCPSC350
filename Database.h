@@ -38,7 +38,6 @@ class Database {
 		void exit();
 		
 		void mainLoop();
-		void writeToDisk();
 	
 	private:
 		BST<Faculty> *masterFaculty;
